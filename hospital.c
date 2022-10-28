@@ -41,9 +41,10 @@ int main(int argc, char * argv[])
 
 	//printf("%d %d %d %d\n", sizeof(person->familyName), sizeof(person->firstName), sizeof(person->emplyeeOrPatient), sizeof(person->patient));
 
+	/*
 	PatientRec *patient = &(PatientRec){1, 2, 10, 3};
 	EmployeeRec *employee = &(EmployeeRec){1, 2, 10, 3};
-	
+	*/
 	/*
 	printf("size of patient: %d\n", sizeof(*patient));
 	printf("size of employee: %d\n", sizeof(*employee));
@@ -64,15 +65,6 @@ int main(int argc, char * argv[])
 	person = (PersonRec *)malloc(numRecords * sizeof(PersonRec));
 	if (person == NULL)
 		return 1;
-	/*
-	(person)->firstName[NAME_SIZE - 1] = '\0';
-	strncpy(person->firstName, "Boris", NAME_SIZE - 1);
-	
-	(person)->familyName[NAME_SIZE - 1] = '\0';
-	strncpy(person->familyName, "Zugic", NAME_SIZE - 1);
-	
-	person->emplyeeOrPatient = 1;
-	*/
 	
 	// populating the array person with data of patients and employees
 	populateRecords(person, numRecords);
@@ -81,7 +73,8 @@ int main(int argc, char * argv[])
 	/*
 	for (int i = 0 ; i < numRecords ; i++)
 	{
-		printf("%s\n", person[i].familyName);
+		if (person[i].emplyeeOrPatient == 1)
+			printf("%d\n", person[i].emp.department);
 	}
 	*/
 
@@ -107,8 +100,12 @@ int main(int argc, char * argv[])
 				exit(0);
 			}
 			// else display menu again (loop again)
-		case 1:
-
+		
+		case 1:	// print all employees
+				
+			person[36].emplyeeOrPatient = 1;
+			person[36].emp.salary = 2132.213;
+			printEmployees(person, numRecords);	
 			break;
 
 		case 2:
