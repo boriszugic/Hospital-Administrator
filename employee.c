@@ -69,8 +69,6 @@ void printEmployeesSummary(PersonRec *person, int numRecords)
 {
     int numOfEmployeesByPosition[4], i;
     float totalSalaryByPosition[4];
-    //int numOfEmployees, i;
-    //float totalSalary;
     
     // initialize array with 0's
     for (i = 0 ; i < 4 ; i++)

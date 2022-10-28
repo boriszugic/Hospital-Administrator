@@ -114,7 +114,7 @@ int main(int argc, char * argv[])
 			break;
 
 		case 4:
-
+			printPatientSummary(person, numRecords);
 			break;
 
 		case 5: 
