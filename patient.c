@@ -1,3 +1,12 @@
+/*
+    file name: patient.c
+
+    purpose: holds implementations of functions used to handle patient records
+
+    revision:
+        Boris Zugic 2022-10-28
+
+*/
 
 
 #include "string.h"
@@ -8,7 +17,18 @@
 
 
 
-/********************************************************************/
+/* void printPatient(PersonRec person)
+
+    purpose: prints records of given patient
+
+    input: 
+    person - person struct whose records are to be printed to screen if it is a patient
+
+    output: none
+
+    side-effects: prints to terminal
+
+*/
 void printPatient(PersonRec person)
 
 {

@@ -11,7 +11,7 @@
     
     output: none
 
-    side-effects: prints formatted employee records
+    side-effects: prints to terminal
 
 */
 void printEmployee(PersonRec person)
@@ -38,7 +38,7 @@ void printEmployee(PersonRec person)
     
     output: none
 
-    side-effects: prints formatted employee records
+    side-effects: prints to terminal
 */
 void printEmployees(PersonRec *person, int numRecords)
 {
@@ -53,7 +53,18 @@ void printEmployees(PersonRec *person, int numRecords)
 
 }
 
+/* void printEmployeesSummary(PersonRec *person, int numRecords)
+    
+    purpose: prints summary of employee records 
 
+    input:
+    person - pointer to person struct array
+    numRecords - num of person structs in array
+
+    output: none
+
+    side-effects: prints to terminal
+*/
 void printEmployeesSummary(PersonRec *person, int numRecords)
 {
     int numOfEmployeesByPosition[4], i;
