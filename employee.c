@@ -51,14 +51,41 @@ void printEmployees(PersonRec *person, int numRecords)
     }
     printf("-------------------------------------\n\n");
 
-    // add code
-
 }
 
 
 void printEmployeesSummary(PersonRec *person, int numRecords)
 {
+    int numOfEmployeesByPosition[4], i;
+    float totalSalaryByPosition[4];
+    //int numOfEmployees, i;
+    //float totalSalary;
+    
+    // initialize array with 0's
+    for (i = 0 ; i < 4 ; i++)
+    {
+        numOfEmployeesByPosition[i] = 0;
+        totalSalaryByPosition[i] = 0;
+    }
 
-    // add code
+    for (i = 0 ; i < numRecords ; i++)
+    {
 
+        
+        if (person[i].emplyeeOrPatient == 0)    // if person is an employee
+        {
+            numOfEmployeesByPosition[(person[i].emp.position)]++;       // increase value at index corresponding to emp position
+            totalSalaryByPosition[(person[i].emp.position)] += person[i].emp.salary;        // add salary to value at index corresponding to emp pos
+        }
+    }
+
+    // OVERALL SUMMARY
+    printf("\n----------Overall Summary------------------\nTotal number of employees:%3d total salary:%10.2f average salary:%8.2f\n-----------------------------------\n", (numOfEmployeesByPosition[0] + numOfEmployeesByPosition[1] + numOfEmployeesByPosition[2] + numOfEmployeesByPosition[3]), (totalSalaryByPosition[0] + totalSalaryByPosition[1] + totalSalaryByPosition[2] + totalSalaryByPosition[3]),  (totalSalaryByPosition[0] + totalSalaryByPosition[1] + totalSalaryByPosition[2] + totalSalaryByPosition[3])/(numOfEmployeesByPosition[0] + numOfEmployeesByPosition[1] + numOfEmployeesByPosition[2] + numOfEmployeesByPosition[3]));
+
+    // SUMMARY BY POSITION
+    printf("\n----------Summary by Position--------------\n");
+    for (i = 0 ; i < 4 ; i++)
+    {
+        printf("position[%d] - employees:%2d total salary:%9.2f average salary:%8.2f\n", i, numOfEmployeesByPosition[i], totalSalaryByPosition[i], totalSalaryByPosition[i]/numOfEmployeesByPosition[i]);
+    }
 }

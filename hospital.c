@@ -21,7 +21,7 @@ revision:
 /*********** DEFINES **********/
 
 #define NUM_RECORDS 20
-#define MENU "Please choose one of the following:\n\n1. Print all employees\n2. Search for all patients by Family Name\n3. Summary of Employees Data\n4. Summary of Patients Data\n5. Size of structures (PersonRec, PatientRec and EmployeeRec)\n0. Quit\n"
+#define MENU "\n-----------------------------------\nPlease choose one of the following:\n\n1. Print all employees\n2. Search for all patients by Family Name\n3. Summary of Employees Data\n4. Summary of Patients Data\n5. Size of structures (PersonRec, PatientRec and EmployeeRec)\n0. Quit\n"
 
 				 
 /*********** FUNCTION PROTOTYPES *************/
@@ -109,8 +109,8 @@ int main(int argc, char * argv[])
 			searchPatients(person, numRecords);
 			break;
 
-		case 3:
-
+		case 3:		// Summary of employees data
+			printEmployeesSummary(person, numRecords);
 			break;
 
 		case 4:
