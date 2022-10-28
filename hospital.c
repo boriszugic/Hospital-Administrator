@@ -119,16 +119,11 @@ int main(int argc, char * argv[])
 
 		case 5: 
 
+			printf("Size of structures\nSize of PersonRec = %d\nSize of EmployeeRec = %d\nSize of PatientRec = %d\n", sizeof(PersonRec), sizeof(EmployeeRec), sizeof(PatientRec));
 			break;
 
-		case 6:
-
-			break;
 	}
 	} 
-
-
-
 
 	// release memory
 	free(person);
@@ -156,6 +151,3 @@ int menu()
 
 	return option;
 }
-
-
-
