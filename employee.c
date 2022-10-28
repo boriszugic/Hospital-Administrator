@@ -2,8 +2,18 @@
 #include "stdio.h"
 
 
-// ADD DOCUMENTATION 
-//
+/* void printEmployee(PersonRec person)
+
+    purpose: prints employee records in a readable format
+
+    input: 
+        person - person struct
+    
+    output: none
+
+    side-effects: prints formatted employee records
+
+*/
 void printEmployee(PersonRec person)
 
 {
@@ -20,7 +30,7 @@ void printEmployee(PersonRec person)
 
 /* void printEmployees(struct person *person, int numRecords)
 
-    purpose: prints all hospital employees in a readable format
+    purpose: prints all hospital employees records in a readable format
 
     input: 
         person - pointer to a list of person structs

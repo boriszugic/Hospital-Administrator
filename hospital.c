@@ -99,17 +99,14 @@ int main(int argc, char * argv[])
 				printf("\nBye.");
 				exit(0);
 			}
-			// else display menu again (loop again)
+			
 		
-		case 1:	// print all employees
-				
-			person[36].emplyeeOrPatient = 1;
-			person[36].emp.salary = 2132.213;
+		case 1:		// print all employees
 			printEmployees(person, numRecords);	
 			break;
 
-		case 2:
-
+		case 2:		// search for all patients by family name
+			searchPatients(person, numRecords);
 			break;
 
 		case 3:
