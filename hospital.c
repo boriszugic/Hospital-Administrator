@@ -87,10 +87,12 @@ int main(int argc, char *argv[])
 			printPatientSummary(person, numRecords);
 			break;
 
+		/*
 		case 5: // size of structs
 
 			printf("Size of structures\nSize of PersonRec = %d\nSize of EmployeeRec = %d\nSize of PatientRec = %d\n", sizeof(PersonRec), sizeof(EmployeeRec), sizeof(PatientRec));
 			break;
+		*/
 		}
 	}
 
