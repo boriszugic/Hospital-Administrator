@@ -34,14 +34,12 @@
 void printPatient(PersonRec person)
 
 {
-
-    if (person.emplyeeOrPatient == 1)
+    if (person.emplyeeOrPatient == 1)   // if person is a patient
     {
         char temp [33];
         sprintf(temp, "%s %s", person.firstName, person.familyName);
         printf("%-33s dept:%2d in hospital:%3d severity:%2d daily cost:%3d total cost:%5d\n", temp, person.patient.department, person.patient.numDaysInHospital - 1, person.patient.severity, person.patient.dailyCost, person.patient.dailyCost*(person.patient.numDaysInHospital - 1));
     }
-
 }
 
 /* void printPatients(PersonRec *person, int numRecords)
@@ -95,16 +93,14 @@ void printPatientSummary(PersonRec *person, int numRecords)
 
         for (i = 0 ; i < 6 ; i++)   // initialize values to 0
         {
-
             numOfPatients[i] = 0;
             costToDate [i] = 0;
             dailyCost[i] = 0;
-
         }
   
-        for (i = 0 ; i < numRecords ; i++)
+        for (i = 0 ; i < numRecords ; i++)  // iterate through persons
         {
-            if (person[i].emplyeeOrPatient % 2)
+            if (person[i].emplyeeOrPatient % 2) // if person is a patient
             {
 
                 numOfPatients[person[i].patient.department - 1]++;      // add 1 for each patient to corresponding department
@@ -121,9 +117,7 @@ void printPatientSummary(PersonRec *person, int numRecords)
         printf("---------------- Summary by Department ---------------\n\n");
         for (i = 0 ; i < 6 ; i++)
         {
-
             printf("Department[%d] - patients:%3d cost-to-date:%7.2f daily cost:%7.2f average daily cost per patient:%7.2f\n", i + 1, numOfPatients[i], costToDate[i], dailyCost[i], dailyCost[i]/numOfPatients[i]);
-
         }
 
 }
@@ -148,22 +142,20 @@ void searchPatients(PersonRec *person, int numRecords)
     int i, found = 0;
 
     printf("Enter the family name of patient: ");
-    // get family name of patient from user
-    scanf("%s", familyName);
-    // clear the buffer
-    fflush(stdin);
+    scanf("%s", familyName);    // get family name of patient
 
-    // search records for matching family name
-    for (i = 0 ; i < numRecords ; i++)
+    fflush(stdin);              // clear the buffer
+
+    for (i = 0 ; i < numRecords ; i++)  // search records for matching family name
     {
-        if (strcmp(person[i].familyName, familyName) == 0)  // if match is found
+        if (strcmp(person[i].familyName, familyName) == 0)  // if match is found,
         { 
-            printPatient(person[i]);    // print patient records
+            printPatient(person[i]);                        // print patient records
             found = 1;
         }
     }
 
-    if (!found)
-        printf("No patients with family name %s.\n", familyName);
+    if (!found)     // if match is NOT found,
+        printf("No patients with family name %s.\n", familyName);   // inform user
 
 }

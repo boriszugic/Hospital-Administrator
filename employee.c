@@ -17,15 +17,12 @@
 void printEmployee(PersonRec person)
 
 {
-
-    if (person.emplyeeOrPatient == 0)
+    if (person.emplyeeOrPatient == 0)   // if person is an employee
     {
         char temp [33];
         sprintf(temp, "%s %s", person.firstName, person.familyName);
         printf("%-33s dept:%2d salary:%9.2f position:%2d years of service:%4d salary to date:%11.2f\n", temp, person.emp.department, person.emp.salary, person.emp.position, person.emp.yearsService, person.emp.salary*(person.emp.yearsService - 1));
     }
-
-
 }
 
 /* void printEmployees(struct person *person, int numRecords)
@@ -88,10 +85,10 @@ void printEmployeesSummary(PersonRec *person, int numRecords)
         }
     }
 
-    // OVERALL SUMMARY
+    /* OVERALL SUMMARY */
     printf("\n----------Overall Summary------------------\nTotal number of employees:%3d total salary:%10.2f average salary:%8.2f\n-----------------------------------\n", (numOfEmployeesByPosition[0] + numOfEmployeesByPosition[1] + numOfEmployeesByPosition[2] + numOfEmployeesByPosition[3]), (totalSalaryByPosition[0] + totalSalaryByPosition[1] + totalSalaryByPosition[2] + totalSalaryByPosition[3]),  (totalSalaryByPosition[0] + totalSalaryByPosition[1] + totalSalaryByPosition[2] + totalSalaryByPosition[3])/(numOfEmployeesByPosition[0] + numOfEmployeesByPosition[1] + numOfEmployeesByPosition[2] + numOfEmployeesByPosition[3]));
 
-    // SUMMARY BY POSITION
+    /* SUMMARY BY POSITION */
     printf("\n----------Summary by Position--------------\n");
     for (i = 0 ; i < 4 ; i++)
     {
